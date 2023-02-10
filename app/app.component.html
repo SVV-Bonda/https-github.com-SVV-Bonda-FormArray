@@ -3,13 +3,13 @@
 <form [formGroup]="stepsForm" (ngSubmit)="saveData()">
   <div class="row">
     <div class="col-12">
-      <div
+      <div style="margin-top: 1rem;"
         class="col-12"
         formArrayName="inputsdata"
         *ngFor="let x of inputsdata.controls; let i = index"
       >
-        <label>Column{{ i }}</label>
-        <input type="date" class="form-control" [formControlName]="i" />
+        <label>Column{{ i }} : </label>
+        <input type="text" class="form-control" [formControlName]="i" />
       </div>
     </div>
 
@@ -19,10 +19,14 @@
           Save
         </button>
 
-        <div class="btn can_btn ms-2" type="button" data-dismiss="modal">
+        <!-- <div class="btn can_btn ms-2" type="button" data-dismiss="modal">
           Cancel
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
 </form>
+
+<div>
+  <h2>{{myData}}</h2>
+</div>
